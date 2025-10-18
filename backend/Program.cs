@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.Extensions.DependencyInjection;
+using DotNetEnv;
 
 namespace Backend;
 
@@ -10,6 +11,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Env.Load();
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddControllers(options =>
@@ -21,8 +23,7 @@ class Program
         builder.Services.AddSwaggerGen();
 
         builder.Services.AddDbContext<SKDbContext>(options =>
-            options.UseSqlite(builder.Configuration["P1DBConnection"]));
-
+    options.UseNpgsql(Environment.GetEnvironmentVariable("P1DBConnection")));
         builder.Services.AddScoped<ISKRepo, SKRepo>();
 
         builder.Services.AddAuthentication("BasicAuthentication")
