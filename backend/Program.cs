@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.Extensions.DependencyInjection;
 using DotNetEnv;
+using Backend.Data;
 
 namespace Backend;
 
@@ -13,11 +14,6 @@ class Program
     {
         Env.Load();
         var builder = WebApplication.CreateBuilder(args);
-
-        builder.Services.AddControllers(options =>
-        {
-            options.OutputFormatters.Add(new CalendarOutputFormatter());
-        });
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
