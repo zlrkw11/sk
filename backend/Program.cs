@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.Extensions.DependencyInjection;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 using DotNetEnv;
 using Backend.Data;
 
@@ -22,8 +23,8 @@ class Program
     options.UseNpgsql(Environment.GetEnvironmentVariable("P1DBConnection")));
         builder.Services.AddScoped<ISKRepo, SKRepo>();
 
-        builder.Services.AddAuthentication("BasicAuthentication")
-            .AddScheme<AuthenticationSchemeOptions, SKAuthHandler>("BasicAuthentication", null);
+        // builder.Services.AddAuthentication("BasicAuthentication")
+        //     .AddScheme<AuthenticationSchemeOptions, SKAuthHandler>("BasicAuthentication", null);
 
         builder.Services.AddAuthorization(options =>
         {
