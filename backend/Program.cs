@@ -3,11 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.Extensions.DependencyInjection;
-using A2Template.Data;
-using A2Template.Handler;
-using A2Template.Helper;
 
-namespace A2Template;
+namespace Backend;
 
 class Program
 {
@@ -23,13 +20,13 @@ class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddDbContext<A2DbContext>(options =>
+        builder.Services.AddDbContext<SKDbContext>(options =>
             options.UseSqlite(builder.Configuration["P1DBConnection"]));
 
-        builder.Services.AddScoped<IA2Repo, A2Repo>();
+        builder.Services.AddScoped<ISKRepo, SKRepo>();
 
         builder.Services.AddAuthentication("BasicAuthentication")
-            .AddScheme<AuthenticationSchemeOptions, A2AuthHandler>("BasicAuthentication", null);
+            .AddScheme<AuthenticationSchemeOptions, SKAuthHandler>("BasicAuthentication", null);
 
         builder.Services.AddAuthorization(options =>
         {
