@@ -18,7 +18,7 @@ namespace Backend.Controllers
         [HttpGet("items")]
         public IActionResult GetItems()
         {
-            var items = _repository.GetAllItems();
+            var items = _repository.GetAllRecords();
             return Ok(items);
         }
     }

@@ -15,6 +15,7 @@ class Program
     {
         Env.Load();
         var builder = WebApplication.CreateBuilder(args);
+        builder.Services.AddControllers();
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -39,6 +40,9 @@ class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseDefaultFiles();
+        app.UseStaticFiles();
 
         app.UseHttpsRedirection();
         app.UseAuthentication();
