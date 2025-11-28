@@ -21,7 +21,7 @@ class Program
         builder.Services.AddSwaggerGen();
 
         builder.Services.AddDbContext<SKDbContext>(options =>
-    options.UseNpgsql(Environment.GetEnvironmentVariable("P1DBConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
         builder.Services.AddScoped<ISKRepo, SKRepo>();
 
         // builder.Services.AddAuthentication("BasicAuthentication")
