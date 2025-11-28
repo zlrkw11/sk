@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\sk\\backend\\backend.csproj": {}
+    "D:\\sk\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\dev\\sk\\backend\\backend.csproj": {
+    "D:\\sk\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\sk\\backend\\backend.csproj",
+        "projectUniqueName": "D:\\sk\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\dev\\sk\\backend\\backend.csproj",
+        "projectPath": "D:\\sk\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\Ray04\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\sk\\backend\\obj\\",
+        "outputPath": "D:\\sk\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ray04\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -95,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.412/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
