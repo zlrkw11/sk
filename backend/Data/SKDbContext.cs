@@ -11,5 +11,6 @@ namespace Backend.Data
     {
         public SKDbContext(DbContextOptions<SKDbContext> options) : base(options) { }
         public DbSet<User> Users { get; set; }
+        public DbSet<Record> Records { get; set; }
     }
 }
